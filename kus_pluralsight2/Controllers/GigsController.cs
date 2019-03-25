@@ -1,7 +1,6 @@
 ﻿using kus_pluralsight2.Models;
 using kus_pluralsight2.ViewModels;
 using Microsoft.AspNet.Identity;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 
@@ -28,6 +27,7 @@ namespace kus_pluralsight2.Controllers
 
         [Authorize]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(GigFormViewModel viewModel)
         {
             if (!ModelState.IsValid)
